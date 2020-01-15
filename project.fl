@@ -1,0 +1,49 @@
+/*CEI222:Project Step 4 ID:Marios Charalambous-13112_Antonis Savvides-17007_Dimitrios Ioannou-14423*/
+
+%{
+#include <stdio.h>
+#include <string.h>
+#include "project.tab.h"
+extern YYSTYPE yylval;
+
+%}
+
+%%
+
+"if"                {return IF;}
+"else"              {return ELSE;}
+"while"             {return WHILE;}
+"int"               {return INT;}
+"void"              {return VOID;}
+"return"            {return RETURN;}
+
+"+"                 {return PLUS;}
+"-"                 {return MINUS;}
+"*"                 {return MULT;}
+"/"                 {return DIV;}
+"<"                 {return LESS;}
+"<="                {return LESS_EQ;}
+">"                 {return GREATER;}
+">="                {return GREATER_EQ;}
+"=="                {return COMPARE;}
+"!="                {return NOT_EQUAL;}
+"="                 {return EQUAL;}
+";"                 {return SEMICOLON;}
+","                 {return COMMA;}
+"("                 {return PAR_LEFT;}
+")"                 {return PAR_RIGHT;}
+"["                 {return COL_LEFT;}
+"]"                 {return COL_RIGHT;}
+"{"                 {return BR_LEFT;}
+"}"                 {return BR_RIGHT;}
+"//"                {return LINE_COMMENT;}
+"/*"                {return COMMENT_START;}
+"*/"                {return COMMENT_END;}
+"/n"
+
+[a-zA-Z]+     {strcpy(yylval.s,yytext);return IDENTIFIER;}
+[0-9]+        {yylval.num=atoi(yytext);return NUMBER;}
+
+.                   
+%%
+int yywrap(){return(1);}

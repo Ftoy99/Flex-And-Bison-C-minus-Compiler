@@ -1,0 +1,22 @@
+int a;
+int b;
+int c;
+int Table[20];
+int average(int x,int y){return x+y;}
+void main(void){
+a=1;
+b=2;
+c=a+b;
+
+
+c=Average(a,b);
+
+
+a=0;
+b=0;
+c=0;
+
+if (a==b){a=1;}
+else{a=2;}
+c=a;
+}
