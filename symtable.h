@@ -1,4 +1,4 @@
-/*CEI222:Project Step 4 ID:Marios Charalambous-13112_Antonis Savvides-17007_Dimitrios Ioannou-14423*/
+
 
 #include <stdio.h>
 #include <stdlib.h>
